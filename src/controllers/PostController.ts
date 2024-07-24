@@ -71,8 +71,6 @@ const getPost = async (_req: express.Request, res: express.Response) => {
 const editPost = async (_req: express.Request, res: express.Response) => {
   const { title, author, content, cover, pid } = _req.body;
 
-  console.log("Request Body:", _req.body); // Add this line
-
   if (!pid) return res.status(400).send({ message: "PID required" });
   if (!title) return res.status(400).send({ message: "Title required" });
   if (!author) return res.status(400).send({ message: "Author required" });
